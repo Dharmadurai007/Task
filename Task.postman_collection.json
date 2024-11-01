@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "4f0331f3-e02b-40c6-b0c3-ae738a05f1a3",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26794775"
+	},
+	"item": [
+		{
+			"name": "Create Expenses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"idly\", \"amount\":100, \"category\":\"food\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8006/expenses"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Expenses",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
