@@ -1,12 +1,11 @@
-from flask_marshmallow import Schema
-from marshmallow.fields import Str, Int
-from marshmallow import validates_schema, ValidationError, validate
+from marshmallow import Schema, fields, validate
 
 length = validate.Length(min=1)
 
 class CreateExpense(Schema):
+    name = fields.Str(validate=length, required=True)
+    amount = fields.Int(validate=validate.Range(min=1), required=True)
+    category = fields.Str(validate=length, required=True)
+
     class Meta:
         fields = ["name", "amount", "category"]
-    name = Str(validate=length, required=True)
-    amount = Int(validate=length, required=True)
-    category = Str(validate=length, required=True)
